@@ -9,21 +9,15 @@ class FriendsList extends React.Component {
       friends: []
     };
   }
-  //   componentDidMount() {
-  //     axios
-  //       .get("")
-  //       .then(res =>
-  //         this.setState({
-  //           friends: res.data.message
-  //         })
-  //       )
-  //       .catch(err => console.log(err));
-  //   }
+
   componentDidMount() {
     axios
       .get("http://localhost:5000/friends")
       .then(res => {
         console.log(res);
+        this.setState({
+          friends: res.data
+        });
       })
       .catch(err => {
         console.log(err);
@@ -33,7 +27,13 @@ class FriendsList extends React.Component {
   render() {
     return (
       <div>
-        <FriendCard />
+        {this.state.friends.map(friend => {
+          return (
+            <div className="friend-card">
+              <FriendCard friend={friend} />
+            </div>
+          );
+        })}
       </div>
     );
   }
