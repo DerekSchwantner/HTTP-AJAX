@@ -32,6 +32,16 @@
   }
 }
 
+.friends-container {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 230px;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  align-items: center;
+}
+
 .friend-card {
   width: 40%;
   max-width: 450px;
