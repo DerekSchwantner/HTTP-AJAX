@@ -26,11 +26,11 @@ const NewFriendForm = () => (
     >
       {({ isSubmitting }) => (
         <Form>
-          <Field type="text" name="name" />
+          <Field placeholder="name" type="text" name="name" />
           <ErrorMessage name="name" component="div" />
-          <Field type="number" name="age" />
+          <Field placeholder="age" type="number" name="age" />
           <ErrorMessage name="age" component="div" />
-          <Field type="email" name="email" />
+          <Field placeholder="email" type="email" name="email" />
           <ErrorMessage name="email" component="div" />
           <button type="submit" disabled={isSubmitting}>
             Submit

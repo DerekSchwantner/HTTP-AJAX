@@ -31,7 +31,7 @@ class FriendsList extends React.Component {
     return (
       <div className="friends-container">
         <h1>Friends</h1>
-        <h4>add new friend</h4>
+
         {this.state.friends.map(friend => {
           return (
             <div key={friend.id} className="friend-card">

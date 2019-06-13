@@ -5,8 +5,14 @@ const FriendCard = props => {
     <div>
       <div className="friend-info-wrapper">
         <h1>{props.friend.name}</h1>
-        <h4>{props.friend.age}</h4>
-        <h4>{props.friend.email}</h4>
+        <p>
+          <strong>Age: </strong>
+          {props.friend.age}
+        </p>
+        <p>
+          <strong>Email: </strong>
+          {props.friend.email}
+        </p>
       </div>
     </div>
   );
