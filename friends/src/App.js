@@ -1,6 +1,11 @@
 import React from "react";
 import FriendsList from "./components/FriendsList";
-import { Route, NavLink } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  NavLink,
+  withRouter
+} from "react-router-dom";
 import NewFriendForm from "./components/NewFriendForm";
 import axios from "axios";
 
@@ -101,13 +106,13 @@ class App extends React.Component {
               Friends List
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to="/add-friend" activeClassName="activeNavButton">
               Add New Friend
             </NavLink>
-          </li>
+          </li> */}
           <li>
-            <NavLink to="/friend-form">{`${
+            <NavLink to="/friend-form" activeClassName="activeNavButton">{`${
               this.state.activeFriend ? "Update" : "Add"
             } Friend`}</NavLink>
           </li>
@@ -148,4 +153,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);
